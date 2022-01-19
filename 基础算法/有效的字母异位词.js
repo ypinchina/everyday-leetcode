@@ -38,7 +38,7 @@ var isAnagram = function (s, t) {
       map.set(t[j], map.get(t[j]) - 1)
     }
   }
-  // 每一个字典字符的次数都为0返回true，否则返回else
+  // 每一个字典字符的次数都为0返回true，否则返回false
   return Array.from(map).every(item => item[1] === 0)
 };
 
