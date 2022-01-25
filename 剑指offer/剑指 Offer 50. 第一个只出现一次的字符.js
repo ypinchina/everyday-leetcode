@@ -34,3 +34,17 @@ var firstUniqChar = function (s) {
 };
 // 时间复杂度为O(n),
 // 空间复杂度为O(n)
+
+寻找一个额外的思路， 即检索字符串的下标是否和最后一次出现这个字符串的下标一致
+
+
+var firstUniqChar = function (s) {
+  for (let value of s) {
+    if (s.indexOf(value) === s.lastIndexOf(value)) return value
+  }
+  return ' '
+};
+
+// 时间复杂度为O(n ^ 2), 时间复杂度会很高，但是在leetcode中不高，可能因为字符串一般不会太长的测试用例？
+// 时间复杂度超过 99.72%的用户。。 原比原来的思路要好
+// 空间复杂度为O(1)
