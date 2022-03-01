@@ -35,21 +35,21 @@
  * @return {ListNode}
  */
 var deleteNode = function (head, val) {
-    let p = new ListNode(0)
-    // 创建一个额外的队头
-    p.next = head
-    // 该节点指向原链表的队头
-    let p1 = head, p2 = p
-    // 设置双指针 p1用于指向原来的队头，p2指向新创建的队头
-    while(p1) {
-        if (p1.val === val) {
-                let temp = p1.next ? p1.next : null
-                // 需要兼容删除的是最后一个节点的情况
-                p2.next = temp
-                p1 = temp
-        } else {
-            p2 = p1
-            p1 = p1.next
-            // 不是要删除的节点的话则都后移
-        }
+  let p = new ListNode(0)
+  // 创建一个额外的队头
+  p.next = head
+  // 该节点指向原链表的队头
+  let p1 = head, p2 = p
+  // 设置双指针 p1用于指向原来的队头，p2指向新创建的队头
+  while (p1) {
+    if (p1.val === val) {
+      let temp = p1.next ? p1.next : null
+      // 需要兼容删除的是最后一个节点的情况
+      p2.next = temp
+      p1 = temp
+    } else {
+      p2 = p1
+      p1 = p1.next
+      // 不是要删除的节点的话则都后移
     }
+  }
