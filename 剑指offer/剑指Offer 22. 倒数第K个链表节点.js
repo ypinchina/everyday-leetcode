@@ -44,3 +44,30 @@ var getKthFromEnd = function (head, k) {
   }
   return slow
 };
+
+// 2023.11.13日 发现一道辩题的题目
+// 面试题 02.02. 返回倒数第 k 个节点 链接 https://leetcode.cn/problems/kth-node-from-end-of-list-lcci/description/
+
+// 题目描述：实现一种算法，找出单向链表中倒数第 k 个节点。返回该节点的值。 
+// 我的解法如下：
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} k
+ * @return {number}
+ */
+var kthToLast = function(head, k) {
+  const arr = []
+  while(head) {
+      arr.push(head.val)
+      head = head.next
+  }
+  return arr[arr.length - k]
+};
